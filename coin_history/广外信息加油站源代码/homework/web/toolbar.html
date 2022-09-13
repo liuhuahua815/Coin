@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link rel="stylesheet" href="../css/toolbar.css">
+    <script src="../js/jquery.mini.js"></script>
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="toolbar-inside">
+            <div class="toolbar-content">
+                <div class="toolbar-content-left">
+                    <div class="logo-box">
+                        <img id="back-index" src="../imgs/店铺.png" alt=""></a>
+                    </div>
+                    <ul class="toolbar-Menu-l">
+                        <li><a href="../../web大作业/急救箱home.html">期末急救箱</a></li>
+                        <li><a href="question-display.html">答疑区</a></li>
+                        <li><a href="note-display.html">笔记学习</a></li>
+                    </ul>
+                </div>
+                <div class="toolbar-content-middle">
+                    <div class="search-box">
+                        <form action="">
+                            <input type="text" name="search-content" id="search-box">
+                            <div class="search-btn">搜索</div>
+                        </form>
+                    </div>
+                </div>
+                <div class="toolbar-content-right">
+                    <div class="toolbar-Menu-r">
+                        <div class="toolbar-r-items" id="login-reg">
+                            <div class="login-reg-btn">登录/注册</div>
+                            <div class="login-reg-menu">
+                                <div id="person">个人中心</div>
+                                <a href="">我的笔记</a>
+                                <a href="">我的提问</a>
+                                <a href="admin.html">后台管理</a>
+                                <a><span id="log-out">退出</span></a>
+                            </div>
+                        </div>
+                        <div class="toolbar-r-items" id="notice">
+                            <a href="">消息</a>
+                            <div class="news-menue">
+                                <a href="">评论</a>
+                                <a href="">点赞</a>
+                                <a href="">通知</a>
+                            </div>
+                        </div>
+                        <div class="toolbar-r-items" id="create">
+                            <div class="create-btn">创作 </div>
+                            <div class="create-menue">
+                                <a href="post-note.html">记笔记</a>
+                                <a href="post_question.html">提问题</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="../js/toolbar.js"></script>
+<script>
+    $(function () {
+        $('#back-index').click(function () {
+            // alert('click');
+            window.location.href = "index.html";
+        });
+        var imgpath = sessionStorage.getItem('imgpath');
+        var username = sessionStorage.getItem('username');
+        if (sessionStorage.length != 0) {
+            if (imgpath === null) {
+                $('.login-reg-btn').text("登录/注册");
+            } else {
+                var html = "<img src=" + "../../web大作业/image/img_user/" + imgpath + " class='head-pic'>"
+                $('.login-reg-btn').text(" ");
+                $('.login-reg-btn').append(html);
+
+                // $('.login-reg-btn').text(username);
+            };
+        }
+        $('#person').click(function () {
+            var userid = sessionStorage.getItem("userid");
+            if (userid === null) {
+                alert("请先登录！");
+            }
+            else {
+                window.location.href = "../../web大作业/个人中心.php?user_id=" + userid;
+            }
+        });
+
+    });
+</script>
+
+</html>

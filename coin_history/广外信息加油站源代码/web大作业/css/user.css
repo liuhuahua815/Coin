@@ -1,0 +1,80 @@
+/* CSS Document */
+
+body {
+    margin: 0;
+}
+
+	/* 创建列 */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* 左侧宽度 */
+.column.left {
+  width: 40%;
+  margin: 0px 10px 20px 0px;
+}
+
+/* 右区域宽度 */
+.column.right {
+  width: 50%;
+}
+
+/* 整个宽度 */
+.column.all {
+  width: 100%;
+}
+/* 列后面清除浮动 */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 响应式布局 - 宽度小于600px时设置上下布局 */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+	
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+/*	#64C5F4*/
+    background-color: rgb(78,146,243);
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+	.bt{
+		width: 300px;
+		height:	40px;
+		border-radius: 0.5em;
+		color:rgb(78,146,243);
+		border: 3px solid rgb(78,146,243);
+		background-color: #fff;
+		text-align: center;
+	}
+

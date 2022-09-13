@@ -1,0 +1,124 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    margin:0;
+    padding:0;
+    color:#333;
+}
+.center-box{
+    width: 100%;
+    background: url("../imgs/wallpaper1.jpg") no-repeat ;
+    background-size: cover;
+    min-height: 600px;
+    position: relative;
+    top:50px;
+}
+.center-box-content{
+    /* background:transparent; */
+    position:absolute;
+    top:20%;
+    left: 20%;
+    height: 376px;
+   
+    clear:both;
+    max-width: 1520px;
+}
+.note-box{
+    width:419px;
+    height: 300px;
+    height: 100%;
+    float: left;
+}
+.note p{
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    color: white;
+    line-height: 34px;
+    font-size: 20px;
+    text-indent: 2em;
+}
+.login-reg-box{
+    margin-left: 100px;
+    width: 400px;
+    height:300px;
+    float: right;
+    border-radius: 8px;
+    background-color: #ebecef;
+    opacity: 0.9;
+}
+.login-box{
+    margin: 50px 40px;
+    font-size: 20px;
+    color: #000;
+}
+.login-table>li{
+   margin-top: 20px;
+}
+#reg{
+    cursor: pointer;
+    font-weight: 700;
+}
+.login-table>li>input{
+    display: block;
+    width: 300px;
+    height: 40px;
+    border-radius: 6px 6px;
+    background: #fff;
+    font-size: 20px;
+    border:none
+}
+#submit-btn{
+    background: skyblue;
+}
+.reg-form-box{
+    margin-left: 100px;
+    width: 600px;
+    height:400px;
+    float: right;
+    border-radius: 8px;
+    background-color: #ebecef;
+    opacity: 0.9;
+    
+}
+.reg-form{
+   margin: 100px;
+    font-size: 18px;
+}
+.form-item{
+    margin-top: 20px;
+}
+.form-item input{
+    width: 200px;
+    height: 25px;
+    background: #fff;
+    font-size: 20px;
+}
+#reg-btn,#login-btn{
+    border-radius: 4px;
+    background-color: rgb(78,146,243);
+    color: #fff;
+    width: 120px;
+    height: 30px;
+    margin-left: 90px;
+    text-align: center;
+    cursor: pointer;
+}
+.set-password,.check-password{
+    position:relative;
+    width: 500px;
+}
+
+.inform,.inform-sec{
+    position:absolute;
+    left:300px;
+    top:0;
+    height: 32px;
+    line-height: 32px;
+    font-size: 15px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.inform-text,.inform-sec-text{
+    margin-left: 40px;
+}

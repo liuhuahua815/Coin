@@ -1,0 +1,104 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+body{
+    font-size:18px;
+    
+}
+.title-input-box{
+    margin-top: 10px;
+    margin-left: 35%;
+}
+.intro-input-box{
+    margin-top: 10px;
+    margin-left: 30%;
+}
+#title-input{
+    width: 300px;
+    height: 25px;
+}
+#intro-input{
+    width: 500px;
+    height: 25px;
+}
+.box{
+    width: 90%;
+    height: 800px;
+    margin-top: 30px;
+    margin-left: 50px;
+    border: 1px solid #ccccd8;
+}
+.edit-box {
+    height: 700px;
+    width: 50%;
+    float: left;
+  
+}
+.display-box {
+    width: 50%;
+    height: 700px;
+    float: left;
+}
+.toolbar{
+    height: 50px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.toolbar span{
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.toolbar img{
+    width: 28px;
+    height:28px;
+    cursor:pointer;
+}
+.content{
+    padding:20px;
+    /* border: 1px solid red; */
+    height: 700px;
+}
+
+#q_content{
+    width: 100%;
+    height: 100%;
+   
+}
+#q_content_show{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+.post-btn {
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid rgb(78, 144, 243);
+    background-color: rgb(78, 144, 243);
+    color: #fff;
+    cursor: pointer;
+    line-height: 30px;
+    height: 30px;
+    margin-left: 46%;
+}
+   /*Github主题要求的样式引入*/
+   .markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+   
+}
+
+@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}

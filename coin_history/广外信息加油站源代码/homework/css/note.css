@@ -1,0 +1,67 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color: #f5f7f8;
+}
+.note-title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px ;
+    width: 100%;
+}
+.note-show-box{
+    margin-top: 20px;
+    width: 850px;
+    margin-left: 300px;
+    padding: 15px;
+    background-color: #fff;
+    border:1px solid #cccc;
+    border-radius: 10px;
+}
+.user-info{
+    display: flex;
+}
+.user-pic img{
+  width: 32px;
+  height: 32px;
+}
+.user-name{
+    margin-left: 20px;
+}
+.createtime{
+    margin-left: 40px;
+}
+.note-box{
+    border: 1px solid #c3c3c3;
+    padding: 15px;
+    max-height: 700px;
+    overflow-y:scroll;
+}
+  /*Github主题要求的样式引入*/
+  .note-out-box>.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding:20px 10px ;
+   
+}
+
+@media (max-width: 767px) {
+    .note-out-box>.markdown-body {
+        padding:20px 10px;
+    }
+}
+.user-behavior{
+    display: flex;
+    margin-top: 10px;
+    padding: 8px;
+}
+.like,.collect{
+    margin-left: 30px;
+}

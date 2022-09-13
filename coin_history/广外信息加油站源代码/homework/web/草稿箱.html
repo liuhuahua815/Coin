@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    question_arr = [{ "creatime": '2021-12-31 12:03:08.999', "hmtl": "div1" }, { "creatime": '2021-12-21 20:44:06.164', "hmtl": "div2" }]
+    question_arr = question_arr.sort(function (a, b) {
+        lista = a.creatime.split('-');
+        a_year = lista[0];
+        a_month = lista[1];
+        a_day = lista[2].split(" ")[0];
+        a_time = lista[2].split(" ")[1];
+        a_totaltime = parseFloat(a_time.split(":")[0]) * 3600 + parseFloat(a_time.split(":")[1]) * 60 + parseFloat(a_time.split(":")[2]);
+
+        listb = b.creatime.split('-');
+        b_year = listb[0];
+        b_month = listb[1];
+        b_day = listb[2].split(" ")[0];
+        b_time = listb[2].split(" ")[1];
+        atotaltime = parseFloat(b_time.split(":")[0]) * 3600 + parseFloat(b_time.split(":")[1]) * 60 + parseFloat(time.split(":")[2]);
+
+    });
+    console.log(question_arr)
+</script>
+
+</html>

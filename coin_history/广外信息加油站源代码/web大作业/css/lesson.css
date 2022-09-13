@@ -1,0 +1,49 @@
+/* CSS Document */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.hidden {
+display: none;
+}
+/* 创建列 */
+.column {
+  float: left;
+  padding: 10px;
+}
+/* 左侧宽度 */
+.column.left {
+/*  background-color: #E5F2F9;*/
+  width: 45%;
+/*  margin: 10px 10px 10px 10px;*/
+}
+/* 右区域宽度 */
+.column.right {	
+  background-color: #D7F0FF;
+  width: 53%;
+  margin: 20px 10px 20px 0px;	
+  border-radius: 10px;	
+}
+/* 整个宽度 */
+.column.all {
+  width: 100%;
+}
+/* 列后面清除浮动 */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* 响应式布局 - 宽度小于600px时设置上下布局 */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+.navbar
+	{
+		background: rgb(78,146,243);
+	}

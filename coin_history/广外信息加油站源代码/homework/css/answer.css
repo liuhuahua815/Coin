@@ -1,0 +1,164 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color: #f5f7f8;
+    font-size: 16px;
+}
+.question-show-box,.edit-answer{
+    margin-left: 40px;
+    background-color: #fff;
+    width: 55%;
+    margin-top: 20px;
+
+}
+.answer-display-box{
+    margin-left: 40px;
+    width: 55%;
+    margin-top: 20px;
+}
+.edit-answer-inner{
+    margin-top: 10px;
+    padding: 15px;
+    height: 400px;
+}
+.question-show-inner{
+    padding: 20px;
+}
+.user-info{
+    height: 50px;
+}
+.user-info-each:first-child{
+    margin-left: 0;
+}
+.user-info-each{
+    display: inline-block;
+    margin-left: 10px;
+}
+.question-title{
+ 
+    margin-bottom: 10px;
+}
+.question-content{
+    margin-bottom: 30px;
+}
+.bar{
+    display: flex;
+    justify-content: space-evenly;
+}
+.bar-box{
+    height: 30px;
+    line-height: 30px;
+    color:#999aaa;
+}
+#answer-btn{  
+    width: 100px;
+    border-radius: 5px;  
+    text-align: center;
+    background-color: rgb(78, 144, 243);
+    color:#fff;
+    cursor: pointer;
+}
+#like{
+    width: 120px;
+    border-radius: 4px;
+    text-align: center;
+    background: url("../icon/点赞.png") no-repeat left center;
+    border: 1px solid #e8e8ed;
+    
+}
+#collect{
+       width: 120px;
+        border-radius: 4px;
+        text-align: center;
+        background: url("../icon/收藏.png") no-repeat left center;
+        border: 1px solid #e8e8ed;
+}
+.post-btn{
+   margin-left: 400px;
+    width: 80px;
+    height: 35px;
+    border-radius: 35px;
+    line-height: 35px;
+    color:#fff;
+    text-align: center;
+    margin-top: 10px;
+    background-color:rgb(78,146,243);
+}
+.tag{
+    margin:10px auto;
+    height:30px;
+}
+.tag-each{
+    background-color: #ebf2f7;
+    color:#69aedf;
+    margin:7px;
+    float:left;
+    cursor: pointer;
+}
+#head-pic{
+    width: 32px;
+    height: 32px;
+}
+.info{
+    height: 40px;
+}
+.a-headpic,.a-username,.a-createtime{
+    float: left;
+    margin-left: 30px;
+}
+.a-headpic>img{
+    width: 32px;
+    height: 32px;
+}
+.bottom{
+    display: flex;
+}
+.like,.report,.remark-btn{
+    margin-left: 15px;
+}
+.answer-each{
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px;
+}
+  /*Github主题要求的样式引入*/
+  .markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 10px;
+   
+}
+
+@media (max-width: 767px) {
+    .markdown-body {
+        padding: 10px;
+    }
+}
+.tag-each{
+    background-color: #ebf2f7;
+    color:#69aedf;
+    margin:7px;
+   display: inline-block;
+    cursor: pointer;
+}
+.tag:nth-child(1){
+    margin-left: 0;
+}
+.answer{
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+}
+#q_content_show{
+    overflow-y: scroll;
+    width: 100%;
+    height: 90%;
+    max-height:300px;
+}

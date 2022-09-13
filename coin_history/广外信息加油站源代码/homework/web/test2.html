@@ -1,0 +1,67 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Sliding Menu Effect</title>
+	<link rel="stylesheet" type="text/css" href="style2.css" />
+	<script type="text/javascript" language="javascript" src="../js/jquery.mini.js"></script>
+	<!-- <script type="text/javascript" src="insertsome.js"></script> -->
+	<script type="text/javascript">
+		$(function () {
+			$(".cont").click(function () {
+				$(".tarea").insert({ "text": "123456" });
+			});
+		});
+	</script>
+</head>
+
+<body><br />
+	<br />
+
+	<div class="cont">点击我</div><br />
+	<br />
+
+	<textarea class="tarea" name="" cols="50" rows="15">
+创作、游戏开发、运营管理等领域的精英人才，并拥有国内多家教育科研机构的战略合作资源。
+ 
+　　聚网科技以“为儿童提供真正健康有益的互联网产品”为己任，在产品研发过程中，注重将能力教育融入全新的游戏玩法，不断探索更加受儿童欢迎、更加有益于儿童的多元化娱乐模式，在行业里形成了“锐意进取、不断创新”的良好形象，也使得公司产品一直在行业内保持
+</textarea>
+</body>
+<script>
+	// JavaScript Document
+	(function ($) {
+		$.fn.extend({
+			"insert": function (value) {
+				//默认参数
+				value = $.extend({
+					"text": "123"
+				}, value);
+
+				var dthis = $(this)[0]; //将jQuery对象转换为DOM元素
+
+				if (dthis.selectionStart || dthis.selectionStart == '0') {
+
+					var start = dthis.selectionStart;
+					var end = dthis.selectionEnd;
+					var top = dthis.scrollTop;
+
+					//以下这句，应该是在焦点之前，和焦点之后的位置，中间插入我们传入的值
+					dthis.value = dthis.value.substring(0, start) + value.text + dthis.value.substring(end, dthis.value.length);
+				}
+
+				//在输入元素textara没有定位光标的情况
+				else {
+					this.value += value.text;
+					this.focus();
+				};
+
+				return $(this);
+			}
+		})
+	})(jQuery)
+</script>
+
+</html>

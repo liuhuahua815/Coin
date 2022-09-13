@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/github-markdown.css">
+    <link rel="stylesheet" href="../css/editor-box.css">
+    <script type="text/javascript" src="../js/jquery.mini.js"></script>
+    <script type="text/javascript" src="../js/showdown.min.js"></script>
+    <script type="text/javascript" src="../js/editor-box.js"></script>
+</head>
+
+<body>
+    <div class="content-input-box">
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <span id="edit-btn">编辑</span>
+                <span id="preview-btn">预览</span>
+            </div>
+            <div class="toolbar-right">
+                <span id="bold"><img src="../icon/富文本编辑器_加粗.png" alt=""></span>
+                <span id="em"><img src="../icon/富文本编辑器_斜体.png" alt=""></span>
+                <span id="code"><img src="../icon/富文本编辑器_代码.png" alt=""></span>
+                <span id="links"><img src="../icon/富文本编辑器_超链接.png" alt=""></span>
+                <span id="pic"><img src="../icon/富文本编辑器_图片.png" alt=""></span>
+                <span id="table"><img src="../icon/富文本编辑器_表格.png" alt=""></span>
+            </div>
+        </div>
+        <div class="content-input">
+            <div class="content">
+                <textarea name="q_content" id="q_content"></textarea>
+            </div>
+        </div>
+        <div class="content-output">
+            <div class="content">
+                <div id="q_content_show" class="markdown-body"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

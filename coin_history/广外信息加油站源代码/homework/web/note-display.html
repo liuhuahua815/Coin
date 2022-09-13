@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记展示</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/note-display.css">
+    <script type="text/javascript" src="../js/jquery.mini.js"></script>
+
+
+</head>
+
+<body>
+    <div class="toolbar-top"></div>
+    <div class="note-display">
+        <div class="line-each" id="first-line">
+        </div>
+        <div class="line-each" id="second-line">
+        </div>
+        <div class="page">
+            <ul id="menu">
+                <li><a href="#">Previous</a></li>
+                <span class="add-page">
+
+                </span>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+</body>
+<script>
+    $(function () {
+        var note_arr = Array();
+        $('.toolbar-top').load('toolbar.html');
+        $.ajax({
+            url: "../php/note-display.php",
+            datatype: "json",
+            type: "get",
+            success: function (data) {
+                // alert("成功");
+                for (var i = 0; i < data.length; i++) {
+                    var html = "";
+                    html += "<div class='note-item' note_id=" + data[i].note_id + "><div class='info-each note-intro'>" + data[i].note_intro;
+                    html += "</div><div class='info-each'><span>笔记名：</span><span class='title'>" + data[i].note_title;
+                    html += "</span></div><div class='info-each'><span>创建者：</span><span class='user-name'>" + data[i].user_name;
+                    html += "</span></div><div class='info-each'><span>创建时间：</span><span class='note-createtime'>" + data[i].createtime;
+                    html += "</span></div><div class=' count'><div class='like'><img src='../icon/点赞.png' alt=''><span id='like-num'>" + data[i].like_num;
+                    html += "</span></div><div class='collect'><img src='../icon/收藏.png' alt=''><span id='collect-num'>" + data[i].collect_num;
+                    html += "</span></div></div></div>";
+                    if (i < 6) {
+                        if (i < 3) {
+                            $('#first-line').append(html);
+                        }
+                        else {
+                            $('#second-line').append(html);
+                        }
+                    }
+                    note_arr.push(html);
+                }
+                console.log(note_arr);
+                var page = note_arr.length / 6;
+                for (var j = 0; j < page; j++) {
+                    $('.add-page').append("<li><a><span class='page-num'>" + (j + 1) + "</span></a></li>")
+                }
+            },
+            error: function () {
+                alert("笔记加载失败！");
+            }
+        });
+        $('.line-each').on('click', '.note-item', function () {
+            console.log('item-each click');
+            window.location.href = "note.html?note_id=" + $(this).attr("note_id");
+        });
+        $('#menu a').click(function () {
+            alert("click");
+        });
+        $('.add-page').on('click', '.page-num', function () {
+            var num = $(this).text();
+            // alert(num);
+            if (num != '1') {
+                $('.line-each').empty();
+                var start = (parseInt(num) - 1) * 6;
+                for (var k = start; k < start + 6; k++) {
+                    if (k < note_arr.length) {
+                        if (k < start + 3) {
+                            $('#first-line').append(note_arr[k]);
+                        } else {
+                            $('#second-line').append(note_arr[k]);
+                        }
+                    }
+                }
+            }
+            else {
+                $('.line-each').empty();
+                for (var k = 0; k < 6; k++) {
+                    if (k < note_arr.length) {
+                        if (k < 3) {
+                            $('#first-line').append(note_arr[k]);
+                        } else {
+                            $('#second-line').append(note_arr[k]);
+                        }
+                    }
+                }
+            }
+        });
+    })
+</script>
+
+</html>

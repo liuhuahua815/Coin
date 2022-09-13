@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="../css/github-markdown.css">
+    <script src="../js/jquery.mini.js"></script>
+    <style>
+        * {
+            text-decoration: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .box {
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+
+        .nav {
+            width: 200px;
+            background-color: #ebf2f7;
+            border: 1px solid #ebf2f7;
+            border-radius: 5px;
+            float: left;
+        }
+
+        .nav>li {
+            height: 80px;
+            font-size: 18px;
+            width: 200px;
+            text-align: center;
+            background-color: #ebf2f7;
+            border: 1px solid #ebf2f7;
+        }
+
+        .nav>li:hover {
+            background-color: #719fe1;
+        }
+
+        .resource-check {
+
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .each {
+            padding: 5px;
+            background-color: #ebf2f7;
+            border: 1px solid #ebf2f7;
+            border-radius: 5px;
+            width: 400px;
+            height: 30px;
+            font-size: 18px;
+            text-align: left;
+
+        }
+
+        .upload-show {
+            float: left;
+            margin-left: 100px;
+            width: 500px;
+        }
+
+        .answer-show {
+            float: left;
+            margin-left: 100px;
+            width: 700px;
+            max-height: 900px;
+            overflow-y: scroll;
+        }
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .answer-each {
+            margin-top: 10px;
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .info {
+            height: 40px;
+        }
+
+        .a-headpic,
+        .a-username,
+        .a-createtime {
+            float: left;
+            margin-left: 30px;
+        }
+
+        .a-headpic>img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .bottom {
+            display: flex;
+        }
+
+        /*Github主题要求的样式引入*/
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 10px;
+
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 10px;
+            }
+        }
+
+        .answer {
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+        }
+
+        .del-btn {
+            width: 100px;
+            height: 40px;
+            background-color: red;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="nav">
+            <li>
+                <div class="resource-check">资源审核</div>
+            </li>
+            <li>
+
+                <div class="answer-del">问题回答管理</div>
+            </li>
+        </div>
+        <div class="upload-show">
+        </div>
+        <div class="answer-show"></div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('.upload-show').on('click', '.checked', function () {
+            alert("审核通过");
+            console.log($(this));
+            $(this).attr("src", "../icon/打钩(1).png");
+
+        });
+        $('.resource-check').click(function () {
+            $('.upload-show').show();
+            $('.answer-show').hide();
+            $('.upload-show').empty();
+            $.ajax({
+                url: "../php/get-resource.php",
+                type: "GET",
+                dataType: "json",
+                success: function (result) {
+                    for (var i = 0; i < result.length; i++) {
+                        var html = "";
+                        html = " <div class='each'><img src='../icon/打钩.png' class='checked'><span class='resource-path'>" + result[i].resource_path + " </span> </div>";
+                        $('.upload-show').append(html);
+                    }
+                },
+                error: function (result) {
+                    alert("资源加载失败！");
+                }
+            });
+        });
+        $('.answer-del').click(function () {
+            $('.upload-show').hide();
+            $('.answer-show').show();
+            $.ajax({
+                type: "GET",
+                url: "../php/answer-all.php",
+                dataType: 'json',
+                success: function (result) {
+                    alert("加载成功！");
+                    for (var i = 0; i < result.length; i++) {
+                        var html = " ";
+                        var imgpath = "../../web大作业/image/img_user/" + result[i].img_path;
+                        var html = "<div class='answer-each'><div class='info'> <div class='a-headpic'> <img src=" + imgpath + "></div><div class='a-username'>" + result[i].username + "</div>";
+                        html += "<div class='a-createtime'>" + result[i].createtime + "</div></div><div class='answer markdown-body'>" + result[i].content + "</div>";
+                        html += "<div class='bottom'><div class='remark-btn'>评论</div><div class='like'>喜欢</div><div class='report'>举报</div></div></div>" + "  <div class='del-btn' answer-id=" + result[i].answer_id + ">删除</div>";
+                        $('.answer-show').append(html);
+                    }
+                },
+                error: function (data) {
+                    alert("问题加载失败" + data);
+                }
+            });
+        });
+        $('.answer-show').on('click', '.del-btn', function () {
+            var id = $(this).attr("answer-id");
+            $.ajax({
+                url: "../php/del-answer.php",
+                data: { "answer_id": id },
+                type: "post",
+                success: function () {
+                    alert("删除成功");
+                },
+                error: function () {
+                    alert("删除成功！");
+                }
+            })
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Simple example - Editor.md examples</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/editormd.css" />
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+
+    <style>
+        .post-btn {
+            width: 100px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid rgb(78, 144, 243);
+            background-color: rgb(78, 144, 243);
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="../php/post-note.php" method="post">
+        <div id="my-editormd">
+            <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc" style="display:none;"></textarea>
+            <!-- 注意：name属性的值 -->
+            <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+        </div>
+        <input type="submit" value="发布笔记" class="post-btn">
+    </form>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/editormd.min.js"></script>
+    <script type="text/javascript">
+        var testEditor;
+
+        $(function () {
+            testEditor = editormd("my-editormd", {
+                width: "90%",
+                height: 640,
+                syncScrolling: "single",
+                path: "../lib/",
+                saveHTMLToTextarea: true,//注意3：这个配置，方便post提交表单
+                imageUpload: true,
+                imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                imageUploadURL: "../php/upload.php?test=dfdf",
+				
+            });
+            // $('.post-btn').click(function () {
+            //     console.log($('#my-editormd-markdown-doc').val());
+            //     console.log($('#my-editormd-html-code').val());
+
+            // })
+        });
+
+    </script>
+</body>
+
+</html>

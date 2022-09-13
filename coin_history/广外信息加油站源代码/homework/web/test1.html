@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入下划线展开</title>
+    <style type="text/css">
+        #underline {
+            width: 200px;
+            height: 50px;
+            background: #ddd;
+            margin: 20px;
+            position: relative;
+        }
+
+        #underline:after {
+            content: "";
+            width: 0;
+            height: 1px;
+            background: blue;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transition: all .8s;
+        }
+
+        #underline:hover:after {
+            left: 0%;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="underline"></div>
+
+    <form method="post" action="../php/get-tag.php" class="reg-form-list">
+        <ul class="login-table">
+            <li><input type="text" name="tag_type" id="username" placeholder="标签类型"> </li>
+            <li><input type="password" name="password" placeholder="密码"> </li>
+            <li>
+               <input type="submit" value="登录">
+            </li>
+            <li>没有账号？点击<span id="reg">注册</span></li>
+        </ul>
+    </form>
+
+
+</body>
+
+</html>

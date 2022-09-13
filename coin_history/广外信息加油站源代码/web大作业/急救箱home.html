@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>急救站首页</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link href="css/my_style.css" rel="stylesheet" type="text/css">
+
+ <script>
+	 $(function(){
+//		   $('.toolbar-top').load('../homework/web/toolbar.html');
+	 })
+        function showSite(str) {
+            if (str == "") {
+                document.getElementsByClassName("container").innerHTML = "";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+			var user_id = sessionStorage.getItem("userid");
+            window.location.href="课程介绍.php?q=" + str+ "&user_id="+user_id;
+            
+        }
+ </script>
+</head>
+
+<body>
+<div class="toolbar-top"></div>
+<div class="container">
+<div style="padding: 20px 100px 10px;"> 
+ <h4> 少壮不努力，老大徒伤悲，快找资料复习吧！：</h4><br>
+ <div style="padding: 0px 50px 10px;"> 
+<div class="row">
+ <button type="button" class="my_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<h3>大一</h3>
+	  </button>
+  <!-- Default dropright button -->
+	<form>
+    <select name="users" onchange="showSite(this.value)" style="height: 60px; width: 360px;">
+       <p>大一：</p>
+        <option value="">选择大一课程:</option>
+        <option value="1">程序设计基础（C++）</option>
+        <option value="2">ESP</option>
+        <option value="3">高数上</option>
+        <option value="4">计算机科学导论</option>
+        <option value="5">离散数学</option>
+        <option value="6">线性代数</option>
+        <option value="7">综英</option>
+        <option value="8">面向对象程序设计（Java）</option>
+        <option value="9">电路与电子技术</option>
+        <option value="10">高数下</option>
+        <option value="11">数据结构</option>
+    </select>
+</form>
+	</div>
+	<div style="padding: 20px 0px 20px;"> 
+<div class="row">
+	  <button type="button" class="my_button">
+		<h3>大二</h3>
+	  </button>
+ <form>
+    <select name="users" onchange="showSite(this.value)" style="height: 60px; width: 360px;">
+       <p>大二：</p>
+        <option value="">选择大二课程:</option>
+        <option value="12">操作系统</option>
+        <option value="13">概率论与数理统计</option>
+        <option value="14">计算机系统组成</option>
+        <option value="15">软件工程导论</option>
+        <option value="16">算法分析与设计</option>
+        <option value="17">操作系统实践</option>
+        <option value="18">计算机网络</option>
+        <option value="19">软件体系结构</option>
+        <option value="20">数据库系统原理</option>
+        <option value="21">数据挖掘</option>
+    </select>
+</form>    
+  </div>
+  <div style="padding: 20px 0px 20px;"> 
+  <div class="row">
+	  <button type="button" class="my_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<h3>思政课</h3>
+	  </button>
+        <form>
+    <select name="users" onchange="showSite(this.value)" style="height: 60px; width: 360px;">
+       <p>思政：</p>
+        <option value="">选择思政课程:</option>
+        <option value="22">中国近现代史纲要</option>
+        <option value="23">马克思主义基本原理</option>
+        <option value="24">思想道德修养与法律基础</option>
+        <option value="25">毛泽东思想和中国特色社会主义理论体系概论</option>
+       
+    </select>
+</form>    
+	</div>
+
+  </div>
+  <div style="padding: 20px 0px 20px;"> 
+  <div class="row">
+	  <button type="button" class="my_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<h3>英语六级</h3>
+	  </button>
+	 <form>
+    <select name="users" onchange="showSite(this.value)" style="height: 60px; width: 360px;">
+       <p>六级：</p>
+        <option value="">选择六级资料:</option>
+        <option value="26">六级学习资源</option>
+       
+    </select>
+</form>    
+  </div>
+  
+  
+</div>
+    
+  </div>
+</body>
+</html>

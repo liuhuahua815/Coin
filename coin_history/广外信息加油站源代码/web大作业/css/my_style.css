@@ -1,0 +1,91 @@
+/* CSS Document */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #BEE5EB;
+}
+
+/* 导航链接 */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* 链接 - 修改颜色 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* 创建列 */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* 左侧宽度 */
+.column.left {
+  width: 40%;
+}
+
+/* 右区域宽度 */
+.column.right {
+  width: 60%;
+}
+
+/* 整个宽度 */
+.column.all {
+  width: 100%;
+}
+/* 列后面清除浮动 */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 响应式布局 - 宽度小于600px时设置上下布局 */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+	
+ul li{
+list-style-image:none;
+list-style-type:none;
+}
+
+.c1 li{	
+background: url("../image/sign_jianhei.jpg") no-repeat   0 50%    ;
+border-bottom: 1px dotted #BCBCBC;
+line-height: 23px;
+padding-left: 10px;
+width:200px;
+}
+
+.my_button {
+  background-color:rgb(78,146,243);
+  color:#fff;	
+}
+
