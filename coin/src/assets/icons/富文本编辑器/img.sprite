@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="../images" ImageName="img" IsPhone="false" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="富文本编辑器_加粗.png" LocationX="0" LocationY="0" />
+    <Sprite Path="富文本编辑器_图片.png" LocationX="200" LocationY="0" />
+    <Sprite Path="富文本编辑器_斜体.png" LocationX="400" LocationY="0" />
+    <Sprite Path="富文本编辑器_表格.png" LocationX="600" LocationY="0" />
+    <Sprite Path="富文本编辑器_超链接.png" LocationX="800" LocationY="0" />
+    <Sprite Path="富文本编辑器_代码.png" LocationX="1000" LocationY="0" />
+  </SpriteList>
+</SpriteFile>

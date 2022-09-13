@@ -1,0 +1,93 @@
+{
+  "id": "3485026",
+  "name": "高校博客平台",
+  "font_family": "iconfont",
+  "css_prefix_text": "Myicon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "145494",
+      "name": "上传",
+      "font_class": "shangchuan1",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "1418242",
+      "name": "已取消",
+      "font_class": "yiquxiao",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "11893619",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "4031002",
+      "name": "doc",
+      "font_class": "doc",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "4031003",
+      "name": "jpg",
+      "font_class": "jpg",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "4031006",
+      "name": "png",
+      "font_class": "png",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "4031008",
+      "name": "ppt",
+      "font_class": "ppt",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "4031010",
+      "name": "pdf",
+      "font_class": "pdf",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "4031016",
+      "name": "xls",
+      "font_class": "xls",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "4031018",
+      "name": "txt",
+      "font_class": "txt",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "3092116",
+      "name": "拍照",
+      "font_class": "paizhao",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    },
+    {
+      "icon_id": "14113895",
+      "name": "金币",
+      "font_class": "jinbi",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    }
+  ]
+}
